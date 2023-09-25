@@ -1,6 +1,6 @@
 ## Eslint plugin
 
-This eslint plugin adds 2 additional rules:  
+This eslint plugin adds 3 additional rules:  
 ### Check for wrong mui imports. In @mui/material or @mui/icons-material you should not use named imports. More info [here](https://mui.com/material-ui/guides/minimizing-bundle-size/)  
 
 Wrong:
@@ -25,6 +25,24 @@ Correct:
 const store = ....
 const myComponent = <div>
     <button onClick={store.buttonClickHandler}>my button</button>
+</div>
+```
+
+### A map in JSX should contain a key
+Wrong:
+``` ts
+const myComponent = <div>
+    {
+        myArray.map(item => <h1>Hello, I am item</h1>)
+    }
+</div>
+```
+Correct:
+``` ts
+const myComponent = <div>
+    {
+        myArray.map(item => <h1 key={item.id}>Hello, I am item</h1>)
+    }
 </div>
 ```
 

@@ -1,24 +1,24 @@
 {
    "name": "@guusje4525/eslint-plugin",
-   "version": "1.0.6",
+   "version": "1.0.10",
    "main": "dist/index.js",
    "peerDependencies": {
-      "eslint": "8.34.0"
+      "eslint": "^8.0.0"
    },
    "author": {
       "name": "Guus",
       "email": "guusje4525@gmail.com"
    },
    "dependencies": {
+      "@typescript-eslint/parser": "^5.57.0",
       "@typescript-eslint/utils": "^5.57.0"
    },
    "devDependencies": {
-      "@typescript-eslint/parser": "^5.57.0",
-      "eslint": "^8.34.0",
-      "typescript": "^5.0.3"
+      "typescript": "*"
    },
    "scripts": {
-      "build": "yarn tsc -b"
+      "build": "yarn tsc -b",
+      "publish": "npm run build && npm publish --access public"
    },
    "description": "Simple eslint plugin that checks if you are using the import wrong & if you are using inline functions"
 }

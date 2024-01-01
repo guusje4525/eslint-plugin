@@ -1,6 +1,6 @@
 {
    "name": "@guusje4525/eslint-plugin",
-   "version": "1.0.10",
+   "version": "1.0.13",
    "main": "dist/index.js",
    "peerDependencies": {
       "eslint": "^8.0.0"

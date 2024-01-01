@@ -1,6 +1,6 @@
 ## Eslint plugin
 
-This eslint plugin adds 3 additional rules:  
+This eslint plugin adds 4 additional rules:  
 ### Check for wrong mui imports. In @mui/material or @mui/icons-material you should not use named imports. More info [here](https://mui.com/material-ui/guides/minimizing-bundle-size/)  
 
 Wrong:
@@ -46,6 +46,17 @@ const myComponent = <div>
 </div>
 ```
 
+### Every .go() query in electrodb should contain the parameter 'pages'
+
+Wrong:
+``` ts
+await MyEntity.query.client({} as any).go()
+```
+Correct:
+``` ts
+await MyEntity.query.client({} as any).go({ pages: 'all' })
+```
+
 
 Your eslint config file should look something like this:
 ``` js
@@ -54,6 +65,8 @@ module.exports = {
    rules: {
       '@guusje4525/mui-import-checker': 'warn',
       '@guusje4525/no-inline-functions-in-jsx': 'warn',
+      '@guusje4525/jsx-key': 'warn',
+      '@guusje4525/go-method-should-have-pages': 'warn'
    },
 }
 ```

@@ -9,5 +9,5 @@ export const rules = {
   'no-inline-functions-in-jsx': noInlineFunctions,
   'jsx-key': JSXKey,
   'go-method-should-have-pages': goMethodShouldHavePages,
-  'useCorrectStoreName': useCorrectStoreName
+  'use-correct-store-name': useCorrectStoreName
 }

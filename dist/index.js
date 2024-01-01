@@ -14,6 +14,6 @@ exports.rules = {
     'no-inline-functions-in-jsx': index_2.default,
     'jsx-key': jsx_key_1.default,
     'go-method-should-have-pages': electrodb_go_params_1.default,
-    'useCorrectStoreName': correct_store_name_1.default
+    'use-correct-store-name': correct_store_name_1.default
 };
 //# sourceMappingURL=index.js.map

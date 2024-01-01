@@ -62,10 +62,12 @@ await MyEntity.query.client({} as any).go({ pages: 'all' })
 Wrong:
 ``` ts
 const store = useAuthStore()
+const store = useStore(sp => new AuthStore(sp))
 ```
 Correct:
 ``` ts
 const authStore = useAuthStore()
+const authStore = useStore(sp => new AuthStore(sp))
 ```
 
 Your eslint config file should look something like this:

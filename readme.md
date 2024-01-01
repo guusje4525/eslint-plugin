@@ -57,6 +57,16 @@ Correct:
 await MyEntity.query.client({} as any).go({ pages: 'all' })
 ```
 
+### Use correct store name (mobx)
+
+Wrong:
+``` ts
+const store = useAuthStore()
+```
+Correct:
+``` ts
+const authStore = useAuthStore()
+```
 
 Your eslint config file should look something like this:
 ``` js

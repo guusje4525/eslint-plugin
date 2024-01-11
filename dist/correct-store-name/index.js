@@ -17,18 +17,18 @@ const myRule = {
     },
     create: (context) => ({
         Identifier: (node) => {
-            var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+            var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
             // ex.
             // const store = useAuthStore()
             // Triggers when a const variable name is store
-            if (node.name === 'store' && 'parent' in node && 'id' in node.parent && 'parent' in node.parent.id && 'init' in node.parent.id.parent && 'callee' in node.parent.id.parent.init) {
+            if (node.name === 'store' && ((_d = (_c = (_b = (_a = node === null || node === void 0 ? void 0 : node.parent) === null || _a === void 0 ? void 0 : _a.id) === null || _b === void 0 ? void 0 : _b.parent) === null || _c === void 0 ? void 0 : _c.init) === null || _d === void 0 ? void 0 : _d.callee)) {
                 // Get the name of the value we are trying to assign to store
-                const callee = (_e = (_d = (_c = (_b = (_a = node === null || node === void 0 ? void 0 : node.parent) === null || _a === void 0 ? void 0 : _a.id) === null || _b === void 0 ? void 0 : _b.parent) === null || _c === void 0 ? void 0 : _c.init) === null || _d === void 0 ? void 0 : _d.callee) === null || _e === void 0 ? void 0 : _e.name;
+                const callee = (_j = (_h = (_g = (_f = (_e = node === null || node === void 0 ? void 0 : node.parent) === null || _e === void 0 ? void 0 : _e.id) === null || _f === void 0 ? void 0 : _f.parent) === null || _g === void 0 ? void 0 : _g.init) === null || _h === void 0 ? void 0 : _h.callee) === null || _j === void 0 ? void 0 : _j.name;
                 let newStoreName = '';
                 // If we are initializing a new store
                 if (callee && typeof callee === 'string') {
                     if (callee === 'useStore') {
-                        newStoreName = (_p = (_o = (_m = (_l = (_k = (_j = (_h = (_g = (_f = node === null || node === void 0 ? void 0 : node.parent) === null || _f === void 0 ? void 0 : _f.id) === null || _g === void 0 ? void 0 : _g.parent) === null || _h === void 0 ? void 0 : _h.init) === null || _j === void 0 ? void 0 : _j.callee) === null || _k === void 0 ? void 0 : _k.parent) === null || _l === void 0 ? void 0 : _l.arguments[0]) === null || _m === void 0 ? void 0 : _m.body) === null || _o === void 0 ? void 0 : _o.callee) === null || _p === void 0 ? void 0 : _p.name;
+                        newStoreName = (_t = (_s = (_r = (_q = (_p = (_o = (_m = (_l = (_k = node === null || node === void 0 ? void 0 : node.parent) === null || _k === void 0 ? void 0 : _k.id) === null || _l === void 0 ? void 0 : _l.parent) === null || _m === void 0 ? void 0 : _m.init) === null || _o === void 0 ? void 0 : _o.callee) === null || _p === void 0 ? void 0 : _p.parent) === null || _q === void 0 ? void 0 : _q.arguments[0]) === null || _r === void 0 ? void 0 : _r.body) === null || _s === void 0 ? void 0 : _s.callee) === null || _t === void 0 ? void 0 : _t.name;
                         // Is it starts with use (ex. useAuthStore starts with use)
                     }
                     else if (callee.startsWith('use')) {

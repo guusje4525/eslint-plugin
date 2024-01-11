@@ -22,7 +22,7 @@ const myRule: TSESLint.RuleModule<MessageIds> = {
         // ex.
         // const store = useAuthStore()
         // Triggers when a const variable name is store
-        if (node.name === 'store' && 'parent' in node && 'id' in node.parent && 'parent' in node.parent.id && 'init' in node.parent.id.parent && 'callee' in node.parent.id.parent.init) {
+        if (node.name === 'store' && node?.parent?.id?.parent?.init?.callee) {
             // Get the name of the value we are trying to assign to store
             const callee = node?.parent?.id?.parent?.init?.callee?.name
             let newStoreName: any = ''

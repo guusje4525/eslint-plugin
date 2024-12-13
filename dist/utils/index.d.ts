@@ -22,5 +22,8 @@ export default class Utils {
      */
     static pragmaUtilgetFromContext(context: Readonly<TSESLint.RuleContext<string, []>>): string;
     static functionLikeExpression(node: any): boolean;
+    static lineIsMakeAutoObserable: (node: any) => boolean;
+    static lineIsThisSpIsSp: (node: any) => boolean;
+    static lineMakesSpAssignment: (node: any) => boolean;
 }
 //# sourceMappingURL=index.d.ts.map

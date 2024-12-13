@@ -72,4 +72,23 @@ export default class Utils {
     static functionLikeExpression(node: any) {
         return node.type === 'FunctionExpression' || node.type === 'ArrowFunctionExpression'
     }
+
+    static lineIsMakeAutoObserable = (node: any) => {
+        return node?.expression?.callee?.name === 'makeAutoObservable'
+    }
+
+    static lineIsThisSpIsSp = (node: any) => {
+        return !(node.type !== "ExpressionStatement" ||
+            node.expression.type !== "AssignmentExpression" ||
+            node.expression.left.type !== "MemberExpression" ||
+            node.expression.left.object.type !== "ThisExpression" ||
+            node.expression.left.property.name !== "sp" ||
+            node.expression.right.name !== "sp")
+    }
+
+    static lineMakesSpAssignment = (node: any) => {
+        return node?.expression?.type === 'AssignmentExpression' &&
+            node?.expression?.left?.type === 'MemberExpression' &&
+            node?.expression?.left?.object?.name === 'sp'
+    }
 }

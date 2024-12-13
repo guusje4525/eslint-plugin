@@ -4,5 +4,6 @@ export declare const rules: {
     'jsx-key': import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<"missingIterKey" | "missingIterKeyUsePrag" | "missingArrayKey" | "missingArrayKeyUsePrag" | "keyBeforeSpread" | "nonUniqueKeys", [], import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
     'go-method-should-have-pages': import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<"goMethodShouldHavePages", [], import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
     'use-correct-store-name': import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<"useCorrectStoreName", [], import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
+    'sp-assignment-check': import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<"statementsBeforeSpAssignment" | "missingSpAssignment", [], import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
 };
 //# sourceMappingURL=index.d.ts.map

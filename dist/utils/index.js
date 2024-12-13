@@ -62,5 +62,23 @@ class Utils {
 Utils.JSX_ANNOTATION_REGEX = /@jsx\s+([^\s]+)/;
 // Does not check for reserved keywords or unicode characters
 Utils.JS_IDENTIFIER_REGEX = /^[_$a-zA-Z][_$a-zA-Z0-9]*$/;
+Utils.lineIsMakeAutoObserable = (node) => {
+    var _a, _b;
+    return ((_b = (_a = node === null || node === void 0 ? void 0 : node.expression) === null || _a === void 0 ? void 0 : _a.callee) === null || _b === void 0 ? void 0 : _b.name) === 'makeAutoObservable';
+};
+Utils.lineIsThisSpIsSp = (node) => {
+    return !(node.type !== "ExpressionStatement" ||
+        node.expression.type !== "AssignmentExpression" ||
+        node.expression.left.type !== "MemberExpression" ||
+        node.expression.left.object.type !== "ThisExpression" ||
+        node.expression.left.property.name !== "sp" ||
+        node.expression.right.name !== "sp");
+};
+Utils.lineMakesSpAssignment = (node) => {
+    var _a, _b, _c, _d, _e, _f;
+    return ((_a = node === null || node === void 0 ? void 0 : node.expression) === null || _a === void 0 ? void 0 : _a.type) === 'AssignmentExpression' &&
+        ((_c = (_b = node === null || node === void 0 ? void 0 : node.expression) === null || _b === void 0 ? void 0 : _b.left) === null || _c === void 0 ? void 0 : _c.type) === 'MemberExpression' &&
+        ((_f = (_e = (_d = node === null || node === void 0 ? void 0 : node.expression) === null || _d === void 0 ? void 0 : _d.left) === null || _e === void 0 ? void 0 : _e.object) === null || _f === void 0 ? void 0 : _f.name) === 'sp';
+};
 exports.default = Utils;
 //# sourceMappingURL=index.js.map

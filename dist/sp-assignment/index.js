@@ -37,7 +37,7 @@ const myRule = {
                 // Go through each line, as we allow sp.something = '' and makeAutoObservable() statements before the initial this.sp = sp assignment
                 for (const n of (_b = (_a = node === null || node === void 0 ? void 0 : node.value) === null || _a === void 0 ? void 0 : _a.body) === null || _b === void 0 ? void 0 : _b.body) {
                     // These are allowed to be before the this.sp = sp assignment
-                    if (utils_1.default.lineIsMakeAutoObserable(n) || utils_1.default.lineMakesSpAssignment(n)) {
+                    if (utils_1.default.lineIsMakeAutoObserable(n) || utils_1.default.lineMakesSpAssignment(n) || utils_1.default.lineIsSuper(n)) {
                         continue;
                     }
                     // If we find the this.sp = sp line, then there is no point in continuing

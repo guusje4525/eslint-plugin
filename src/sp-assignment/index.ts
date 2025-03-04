@@ -39,7 +39,7 @@ const myRule: TSESLint.RuleModule<MessageIds> = {
 
                 for (const n of node?.value?.body?.body) {
                     // These are allowed to be before the this.sp = sp assignment
-                    if (Utils.lineIsMakeAutoObserable(n) || Utils.lineMakesSpAssignment(n)) {
+                    if (Utils.lineIsMakeAutoObserable(n) || Utils.lineMakesSpAssignment(n) || Utils.lineIsSuper(n)) {
                         continue
                     }
 

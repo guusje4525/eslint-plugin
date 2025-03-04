@@ -66,6 +66,10 @@ Utils.lineIsMakeAutoObserable = (node) => {
     var _a, _b;
     return ((_b = (_a = node === null || node === void 0 ? void 0 : node.expression) === null || _a === void 0 ? void 0 : _a.callee) === null || _b === void 0 ? void 0 : _b.name) === 'makeAutoObservable';
 };
+Utils.lineIsSuper = (node) => {
+    var _a, _b;
+    return ((_b = (_a = node === null || node === void 0 ? void 0 : node.expression) === null || _a === void 0 ? void 0 : _a.callee) === null || _b === void 0 ? void 0 : _b.name) === 'super';
+};
 Utils.lineIsThisSpIsSp = (node) => {
     return !(node.type !== "ExpressionStatement" ||
         node.expression.type !== "AssignmentExpression" ||

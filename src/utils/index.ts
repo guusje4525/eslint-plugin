@@ -77,6 +77,10 @@ export default class Utils {
         return node?.expression?.callee?.name === 'makeAutoObservable'
     }
 
+    static lineIsSuper = (node: any) => {
+        return node?.expression?.callee?.name === 'super'
+    }
+
     static lineIsThisSpIsSp = (node: any) => {
         return !(node.type !== "ExpressionStatement" ||
             node.expression.type !== "AssignmentExpression" ||
